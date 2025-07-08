@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmer Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/lucide-static/font/lucide.css" />
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-green-50 to-amber-50">
+    <header class="bg-white shadow-sm border-b border-green-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center space-x-3">
+            <div class="bg-green-500 p-2 rounded-lg">
+              <i class="lucide lucide-sprout text-white"></i>
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold text-green-800">FarmConnect</h1>
+              <p class="text-sm text-green-600">Your Profile</p>
+            </div>
+          </div>
+          <button onclick="history.back()" class="border border-green-500 text-green-700 px-4 py-2 rounded hover:bg-green-100">
+            Back to Dashboard
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="space-y-6">
+        <section class="bg-white shadow rounded-xl p-6">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+              <div class="relative">
+                <div class="h-20 w-20 rounded-full overflow-hidden bg-green-100 flex items-center justify-center text-white text-lg font-bold">
+                  RP
+                </div>
+              </div>
+              <div>
+                <h2 class="text-2xl font-semibold text-green-800">Rajesh Patil</h2>
+                <p class="text-lg text-gray-600">Farmer & Agriculture Enthusiast</p>
+                <div class="flex items-center mt-2 text-sm text-green-600">
+                  <i class="lucide lucide-calendar mr-1"></i>
+                  Member since March 2020
+                </div>
+              </div>
+            </div>
+            <div class="flex space-x-2">
+              <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded flex items-center">
+                <i class="lucide lucide-edit-3 mr-2"></i> Edit Profile
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <section class="bg-white shadow rounded-xl p-6">
+            <h3 class="text-green-800 text-xl font-semibold mb-4 flex items-center">
+              <i class="lucide lucide-user mr-2"></i> Personal Information
+            </h3>
+            <div class="space-y-3">
+              <div><label class="text-sm font-medium text-gray-700">Name</label><p class="mt-1 text-gray-900">Rajesh Patil</p></div>
+              <div><label class="text-sm font-medium text-gray-700">Email</label><p class="mt-1 text-gray-900 flex items-center"><i class="lucide lucide-mail mr-2 text-green-600"></i> rajesh.patil@farmconnect.com</p></div>
+              <div><label class="text-sm font-medium text-gray-700">Phone</label><p class="mt-1 text-gray-900 flex items-center"><i class="lucide lucide-phone mr-2 text-green-600"></i> +91 98765 43210</p></div>
+              <div><label class="text-sm font-medium text-gray-700">Location</label><p class="mt-1 text-gray-900 flex items-center"><i class="lucide lucide-map-pin mr-2 text-green-600"></i> Pune, Maharashtra</p></div>
+            </div>
+          </section>
+
+          <section class="bg-white shadow rounded-xl p-6">
+            <h3 class="text-green-800 text-xl font-semibold mb-4 flex items-center">
+              <i class="lucide lucide-tractor mr-2"></i> Farm Information
+            </h3>
+            <div class="space-y-3">
+              <div><label class="text-sm font-medium text-gray-700">Farm Size</label><p class="mt-1 text-gray-900">15 acres</p></div>
+              <div><label class="text-sm font-medium text-gray-700">Experience</label><p class="mt-1 text-gray-900">12 years</p></div>
+              <div><label class="text-sm font-medium text-gray-700">Specialization</label><div class="mt-1 flex flex-wrap gap-2">
+                <span class="bg-green-100 text-green-800 px-2 py-1 text-xs rounded">Wheat</span>
+                <span class="bg-green-100 text-green-800 px-2 py-1 text-xs rounded">Rice</span>
+                <span class="bg-green-100 text-green-800 px-2 py-1 text-xs rounded">Sugarcane</span>
+              </div></div>
+            </div>
+          </section>
+        </div>
+
+        <section class="bg-white shadow rounded-xl p-6">
+          <h3 class="text-green-800 text-xl font-semibold mb-4">Activity Overview</h3>
+          <p class="text-sm text-green-600 mb-6">Your recent activity on FarmConnect</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="text-center p-4 bg-green-50 rounded-lg">
+              <div class="text-2xl font-bold text-green-800">23</div>
+              <div class="text-sm text-green-600">Workers Hired</div>
+            </div>
+            <div class="text-center p-4 bg-amber-50 rounded-lg">
+              <div class="text-2xl font-bold text-amber-800">12</div>
+              <div class="text-sm text-amber-600">Equipment Rented</div>
+            </div>
+            <div class="text-center p-4 bg-blue-50 rounded-lg">
+              <div class="text-2xl font-bold text-blue-800">8</div>
+              <div class="text-sm text-blue-600">Schemes Applied</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
