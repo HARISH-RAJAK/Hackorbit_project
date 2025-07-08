@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FarmConnect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-green-50 to-amber-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-green-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center space-x-3">
+            <div class="bg-green-500 p-2 rounded-lg">
+              🌱
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold text-green-800">FarmConnect</h1>
+              <p class="text-sm text-green-600">Your Agricultural Hub</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-2">
+              📍
+              <span class="text-sm text-green-700">Maharashtra, India</span>
+            </div>
+            <button class="border px-2 py-1 rounded flex items-center space-x-1">
+              🌐 <span>EN</span>
+            </button>
+            <button class="border px-2 py-1 rounded flex items-center space-x-1">
+              👤 <span>Profile</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="bg-white border-b border-green-100 sticky top-0 z-10">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex overflow-x-auto py-2 space-x-2">
+          <button class="bg-green-500 text-white px-4 py-2 rounded">📈 Dashboard</button>
+          <button class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">👥 Find Workers</button>
+          <button class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">🚜 Rent Equipment</button>
+          <button class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📄 Gov Schemes</button>
+          <button class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">🌿 Crop Guide</button>
+          <button class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📊 Market Data</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Dashboard -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-green-500 text-white p-4 rounded-xl">
+          <h2 class="text-lg">Available Workers</h2>
+          <p class="text-3xl font-bold">247</p>
+          <p class="text-sm text-green-100">within 10km</p>
+        </div>
+        <div class="bg-amber-500 text-white p-4 rounded-xl">
+          <h2 class="text-lg">Equipment Available</h2>
+          <p class="text-3xl font-bold">89</p>
+          <p class="text-sm text-amber-100">ready to rent</p>
+        </div>
+        <div class="bg-blue-500 text-white p-4 rounded-xl">
+          <h2 class="text-lg">Active Schemes</h2>
+          <p class="text-3xl font-bold">15</p>
+          <p class="text-sm text-blue-100">government programs</p>
+        </div>
+        <div class="bg-purple-500 text-white p-4 rounded-xl">
+          <h2 class="text-lg">Crop Varieties</h2>
+          <p class="text-3xl font-bold">156</p>
+          <p class="text-sm text-purple-100">growing guides</p>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="border p-4 rounded-lg hover:shadow-lg">
+          <div class="flex items-center space-x-3 mb-3">
+            <div class="bg-green-100 p-3 rounded-full">👥</div>
+            <div>
+              <h3 class="text-green-800 font-semibold">Need Help?</h3>
+              <p class="text-sm">Find skilled farm workers nearby</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 mb-2">
+            Connect with experienced workers for planting, harvesting, and land management.
+          </p>
+          <span class="bg-green-100 text-green-800 px-2 py-1 text-xs rounded">24/7 Available</span>
+        </div>
+
+        <div class="border p-4 rounded-lg hover:shadow-lg">
+          <div class="flex items-center space-x-3 mb-3">
+            <div class="bg-amber-100 p-3 rounded-full">🚜</div>
+            <div>
+              <h3 class="text-amber-800 font-semibold">Rent Equipment</h3>
+              <p class="text-sm">Access farming tools and vehicles</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 mb-2">
+            Tractors, harvesters, plows and more equipment available for rent.
+          </p>
+          <span class="bg-amber-100 text-amber-800 px-2 py-1 text-xs rounded">Hourly/Daily Rates</span>
+        </div>
+
+        <div class="border p-4 rounded-lg hover:shadow-lg">
+          <div class="flex items-center space-x-3 mb-3">
+            <div class="bg-blue-100 p-3 rounded-full">📄</div>
+            <div>
+              <h3 class="text-blue-800 font-semibold">Gov Schemes</h3>
+              <p class="text-sm">Latest agricultural subsidies</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 mb-2">
+            Stay updated with government schemes and apply for subsidies.
+          </p>
+          <span class="bg-blue-100 text-blue-800 px-2 py-1 text-xs rounded">New Updates</span>
+        </div>
+      </div>
+
+      <!-- Recent Activity -->
+      <div class="border p-4 rounded-lg">
+        <h2 class="text-lg text-green-800 font-semibold mb-2">Recent Activity</h2>
+        <div class="space-y-4">
+          <div class="flex items-center space-x-3 bg-green-50 p-3 rounded-lg">
+            <div class="bg-green-500 p-2 rounded-full text-white">👥</div>
+            <div class="flex-1">
+              <p class="text-sm font-medium">New worker available: Harvesting specialist</p>
+              <p class="text-xs text-gray-500">2 hours ago • 5km away</p>
+            </div>
+            <button class="bg-green-500 text-white px-3 py-1 rounded text-sm">Contact</button>
+          </div>
+
+          <div class="flex items-center space-x-3 bg-amber-50 p-3 rounded-lg">
+            <div class="bg-amber-500 p-2 rounded-full text-white">🚜</div>
+            <div class="flex-1">
+              <p class="text-sm font-medium">John Deere Tractor available for rent</p>
+              <p class="text-xs text-gray-500">4 hours ago • ₹800/day</p>
+            </div>
+            <button class="bg-amber-500 text-white px-3 py-1 rounded text-sm">Rent Now</button>
+          </div>
+
+          <div class="flex items-center space-x-3 bg-blue-50 p-3 rounded-lg">
+            <div class="bg-blue-500 p-2 rounded-full text-white">📄</div>
+            <div class="flex-1">
+              <p class="text-sm font-medium">New PM-KISAN scheme update</p>
+              <p class="text-xs text-gray-500">1 day ago • ₹2000 installment</p>
+            </div>
+            <button class="bg-blue-500 text-white px-3 py-1 rounded text-sm">View Details</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </body>
+</html>
