@@ -9,14 +9,15 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const expressSession = require('express-session');
 const mongoose = require('mongoose');
-
+const userRouter = require('./routes/user');
+const indexRouter = require('./routes/index');
 const app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 
 app.use(expressSession({
-    secret: 'Code_thrust_is_the_best_team',
+    secret: 'Code_Thrust',
     resave: false,
     saveUninitialized: false,
 }));
