@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crop Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 p-6 font-sans">
+  <div class="bg-gray-50 p-6 font-sans max-w-7xl mx-auto">
+    <header class="mb-6 flex justify-between items-start md:items-center gap-4">
+      <div>
+        <h2 class="text-3xl font-bold text-green-800">Crop Guide</h2>
+        <p class="text-green-600">Complete guide for growing healthy and productive crops</p>
+      </div>
+      <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded flex items-center">
+        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"></path></svg>
+        Download Guide
+      </button>
+    </header>
+
+    <div class="mb-6 flex flex-col md:flex-row gap-4">
+      <input type="text" class="pl-10 py-2 border rounded w-full md:flex-1" placeholder="Search crops or varieties...">
+      <div class="flex gap-2 flex-wrap md:flex-nowrap">
+        <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm">All Seasons</button>
+        <button class="text-green-600 border border-green-300 hover:bg-green-50 px-3 py-1 rounded text-sm">Kharif</button>
+        <button class="text-green-600 border border-green-300 hover:bg-green-50 px-3 py-1 rounded text-sm">Rabi</button>
+        <button class="text-green-600 border border-green-300 hover:bg-green-50 px-3 py-1 rounded text-sm">Summer</button>
+        <button class="text-green-600 border border-green-300 hover:bg-green-50 px-3 py-1 rounded text-sm">Year-round</button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div class="border rounded-lg shadow hover:shadow-lg transition-shadow overflow-hidden">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=300&h=200&fit=crop" class="w-full h-48 object-cover">
+          <span class="absolute top-3 right-3 px-2 py-1 text-xs text-white bg-green-500 rounded">Kharif</span>
+        </div>
+        <div class="p-4 space-y-2">
+          <h3 class="text-xl text-green-800 font-semibold">Rice (Paddy)</h3>
+          <p class="text-sm text-gray-600"><strong>Varieties:</strong> Basmati, IR-64, Swarna</p>
+          <p class="text-sm text-gray-600">Duration: 120-150 days</p>
+          <p class="text-sm text-gray-600">Expected Yield: 4-6 tons/hectare</p>
+          <p class="text-sm text-gray-600">Temperature: 20-35°C</p>
+          <p class="text-sm text-gray-600">Rainfall: 1000-1500mm</p>
+          <p class="text-sm text-blue-600 bg-blue-100 inline-block px-2 py-1 rounded">High Water Requirement</p>
+          <p class="text-sm text-gray-600">Soil Type: Clay loam, well-drained</p>
+          <div class="mt-4 pt-4 border-t flex space-x-2">
+            <button class="flex-1 bg-green-500 hover:bg-green-600 text-white px-3 py-1 text-sm rounded">Detailed Guide</button>
+            <button class="flex-1 text-green-600 border border-green-300 hover:bg-green-50 px-3 py-1 text-sm rounded">Planting Calendar</button>
+          </div>
+        </div>
+      </div>
+      <div class="border rounded-lg shadow hover:shadow-lg transition-shadow overflow-hidden">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=300&h=200&fit=crop" class="w-full h-48 object-cover">
+          <span class="absolute top-3 right-3 px-2 py-1 text-xs text-white bg-green-500 rounded">Rabi</span>
+        </div>
+        <div class="p-4 space-y-2">
+          <h3 class="text-xl text-green-800 font-semibold">Wheat</h3>
+          <p class="text-sm text-gray-600"><strong>Varieties:</strong> HD-2967, PBW-343, DBW-187</p>
+          <p class="text-sm text-gray-600">Duration: 120-130 days</p>
+          <p class="text-sm text-gray-600">Expected Yield: 3-5 tons/hectare</p>
+          <p class="text-sm text-gray-600">Temperature: 15-25°C</p>
+          <p class="text-sm text-gray-600">Rainfall: 300-400mm</p>
+          <p class="text-sm text-yellow-600 bg-yellow-100 inline-block px-2 py-1 rounded">Medium Water Requirement</p>
+          <p class="text-sm text-gray-600">Soil Type: Well-drained loamy soil</p>
+          <div class="mt-4 pt-4 border-t flex space-x-2">
+            <button class="flex-1 bg-green-500 hover:bg-green-600 text-white px-3 py-1 text-sm rounded">Detailed Guide</button>
+            <button class="flex-1 text-green-600 border border-green-300 hover:bg-green-50 px-3 py-1 text-sm rounded">Planting Calendar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
