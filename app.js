@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 
 app.use(expressSession({
-    secret: 'harish_is_the_king',
+    secret: 'Code_thrust_is_the_best_team',
     resave: false,
     saveUninitialized: false,
 }));
