@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>My Rented Equipment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-amber-50 font-sans min-h-screen">
+  <header class="bg-white shadow border-b">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-green-700">My Rented Equipment</h1>
+      <a href="/home" class="text-green-600 hover:underline">⬅ Back to Dashboard</a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    <% if (rented_items.length === 0) { %>
+      <div class="text-center text-gray-600">You haven't rented any equipment yet.</div>
+    <% } else { %>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <% rented_items.forEach(item => { %>
+          <div class="bg-white rounded-lg shadow p-4">
+            <img src="/images/uploads/<%= item.image %>" class="w-full h-40 object-cover rounded" alt="<%= item.machineName %>">
+            <div class="mt-4 space-y-1">
+              <h2 class="text-lg font-bold text-green-800"><%= item.machineName %></h2>
+              <p class="text-sm text-gray-600">Type: <%= item.machineType %></p>
+              <p class="text-sm text-gray-600">Location: <%= item.location %></p>
+              <p class="text-sm text-gray-600">Daily Rent: ₹<%= item.rent %></p>
+              <p class="text-sm text-gray-600">Rating: ⭐ <%= item.rating %></p>
+              <p class="text-sm text-gray-600">Owner: <%= item.owner %></p>
+              <p class="text-sm text-gray-500">Status: <%= item.status %></p>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </main>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crop Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-amber-50 to-green-50 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm border-b border-green-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+          <div class="bg-green-500 p-2 rounded-lg text-white text-xl">🌱</div>
+          <div>
+            <h1 class="text-2xl font-bold text-green-800">FarmConnect</h1>
+            <p class="text-sm text-green-600">Your Agricultural Hub</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-2">📍<span class="text-sm text-green-700">Maharashtra, India</span></div>
+          <button class="border px-2 py-1 rounded flex items-center space-x-1 hover:bg-gray-100">🌐<span>EN</span></button>
+          <button class="border px-2 py-1 rounded flex items-center space-x-1 hover:bg-gray-100">👤<span>Profile</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-green-100 sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex overflow-x-auto py-2 space-x-2">
+        <a href="/home" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📈 Dashboard</a>
+        <a href="/workers" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">👥 Find Workers</a>
+        <a href="/renting" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">🚜 Rent Equipment</a>
+        <a href="/schemes" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📜 Gov Schemes</a>
+        <a href="/cropinfo" class="bg-green-500 text-white px-4 py-2 rounded font-semibold underline underline-offset-2">🌿 Crop Guide</a>
+        <a href="/market" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📊 Market Data</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Section -->
+  <main class="max-w-7xl mx-auto px-4 py-8 space-y-8">
+
+    <!-- Page Title -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <h2 class="text-3xl font-bold text-green-800">🌿 Crop Guide</h2>
+        <p class="text-green-600">Complete guide for growing healthy and productive crops</p>
+      </div>
+      <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded flex items-center shadow">
+        ⬇️ <span class="ml-2">Download Guide</span>
+      </button>
+    </div>
+
+    <!-- Search and Filters -->
+    <div class="mb-6 flex flex-col md:flex-row gap-4">
+      <input type="text" class="pl-10 py-2 border rounded w-full md:flex-1 shadow-sm focus:outline-none focus:ring-2 focus:ring-green-300" placeholder="🔍 Search crops or varieties...">
+      <div class="flex gap-2 flex-wrap md:flex-nowrap">
+        <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm shadow">All Seasons</button>
+        <button class="text-green-600 border border-green-300 hover:bg-green-50 px-3 py-1 rounded text-sm">Kharif</button>
+        <button class="text-green-600 border border-green-300 hover:bg-green-50 px-3 py-1 rounded text-sm">Rabi</button>
+        <button class="text-green-600 border border-green-300 hover:bg-green-50 px-3 py-1 rounded text-sm">Summer</button>
+        <button class="text-green-600 border border-green-300 hover:bg-green-50 px-3 py-1 rounded text-sm">Year-round</button>
+      </div>
+    </div>
+
+    <!-- Crop Cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Rice Card -->
+      <div class="border rounded-lg shadow hover:shadow-lg transition overflow-hidden bg-white">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=600&h=300&fit=crop" alt="Rice crop" class="w-full h-48 object-cover">
+          <span class="absolute top-3 right-3 px-2 py-1 text-xs text-white bg-green-500 rounded">Kharif</span>
+        </div>
+        <div class="p-4 space-y-2">
+          <h3 class="text-xl text-green-800 font-semibold">Rice (Paddy)</h3>
+          <p class="text-sm text-gray-600"><strong>Varieties:</strong> Basmati, IR-64, Swarna</p>
+          <p class="text-sm text-gray-600">Duration: 120–150 days</p>
+          <p class="text-sm text-gray-600">Yield: 4–6 tons/ha</p>
+          <p class="text-sm text-gray-600">Rainfall: 1000–1500 mm</p>
+          <p class="text-sm text-blue-700 bg-blue-100 inline-block px-2 py-1 rounded">💧 High Water Requirement</p>
+          <div class="mt-4 pt-4 border-t flex space-x-2">
+            <button class="flex-1 bg-green-500 hover:bg-green-600 text-white px-3 py-1 text-sm rounded shadow">Detailed Guide</button>
+            <button class="flex-1 text-green-600 border border-green-300 hover:bg-green-50 px-3 py-1 text-sm rounded">Planting Calendar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wheat Card -->
+      <div class="border rounded-lg shadow hover:shadow-lg transition overflow-hidden bg-white">
+        <div class="relative">
+          <img src="https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=600&h=300&fit=crop" alt="Wheat crop" class="w-full h-48 object-cover">
+          <span class="absolute top-3 right-3 px-2 py-1 text-xs text-white bg-green-500 rounded">Rabi</span>
+        </div>
+        <div class="p-4 space-y-2">
+          <h3 class="text-xl text-green-800 font-semibold">Wheat</h3>
+          <p class="text-sm text-gray-600"><strong>Varieties:</strong> HD-2967, PBW-343, DBW-187</p>
+          <p class="text-sm text-gray-600">Duration: 120–130 days</p>
+          <p class="text-sm text-gray-600">Yield: 3–5 tons/ha</p>
+          <p class="text-sm text-gray-600">Rainfall: 300–400 mm</p>
+          <p class="text-sm text-yellow-700 bg-yellow-100 inline-block px-2 py-1 rounded">💧 Medium Water Requirement</p>
+          <div class="mt-4 pt-4 border-t flex space-x-2">
+            <button class="flex-1 bg-green-500 hover:bg-green-600 text-white px-3 py-1 text-sm rounded shadow">Detailed Guide</button>
+            <button class="flex-1 text-green-600 border border-green-300 hover:bg-green-50 px-3 py-1 text-sm rounded">Planting Calendar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

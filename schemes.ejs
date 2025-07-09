@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Government Schemes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-green-50 to-green-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm border-b border-green-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+          <div class="bg-green-500 p-2 rounded-lg text-white text-xl">📜</div>
+          <div>
+            <h1 class="text-2xl font-bold text-green-800">FarmConnect</h1>
+            <p class="text-sm text-green-600">Your Agricultural Hub</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-2">📍<span class="text-sm text-green-700">Maharashtra, India</span></div>
+          <button class="border px-2 py-1 rounded flex items-center space-x-1 hover:bg-gray-100">🌐<span>EN</span></button>
+          <button class="border px-2 py-1 rounded flex items-center space-x-1 hover:bg-gray-100">👤<span>Profile</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-green-100 sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex overflow-x-auto py-2 space-x-2">
+        <a href="/home" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📈 Dashboard</a>
+        <a href="/workers" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">👥 Find Workers</a>
+        <a href="/renting" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">🚜 Rent Equipment</a>
+        <a href="/schemes" class="bg-green-500 text-white px-4 py-2 rounded font-semibold underline underline-offset-2">📜 Gov Schemes</a>
+        <a href="/cropinfo" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">🌿 Crop Guide</a>
+        <a href="/market" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📊 Market Data</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Section -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+    <!-- Page Title -->
+    <section class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <h2 class="text-3xl font-bold text-green-800">📜 Government Schemes</h2>
+        <p class="text-green-600">Stay updated with latest agricultural schemes and subsidies</p>
+      </div>
+      <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded flex items-center shadow transition">
+        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M13 16h-1v-4h-1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        Subscribe to Updates
+      </button>
+    </section>
+
+    <!-- Search Bar -->
+    <div class="relative">
+      <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M21 21l-4.35-4.35M3.5 10.5a7.5 7.5 0 1013.65 6.15z" />
+      </svg>
+      <input type="text" class="pl-10 py-2 border rounded w-full shadow-sm focus:outline-none focus:ring-2 focus:ring-green-300" placeholder="Search schemes...">
+    </div>
+
+    <!-- Scheme Cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <!-- Scheme 1 -->
+      <div class="border rounded-lg shadow hover:shadow-lg transition bg-white">
+        <div class="p-4 space-y-2">
+          <div class="flex justify-between items-start">
+            <h3 class="text-lg text-green-800 font-semibold">PM-KISAN Samman Nidhi</h3>
+            <div class="flex space-x-2">
+              <span class="bg-green-100 text-green-800 px-2 py-1 text-xs rounded">active</span>
+              <span class="bg-green-200 text-green-900 px-2 py-1 text-xs rounded">subsidy</span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600">Financial support of ₹6000 per year to small and marginal farmers</p>
+          <p class="text-sm"><strong>Amount:</strong> ₹6,000/year</p>
+          <p class="text-sm"><strong>Deadline:</strong> 2024-03-31</p>
+          <p class="text-sm"><strong>Eligibility:</strong> Small and marginal farmers with landholding up to 2 hectares</p>
+          <p class="text-sm"><strong>Documents:</strong> Aadhaar Card, Land Records, Bank Account</p>
+          <div class="flex justify-between items-center pt-4 border-t">
+            <span class="text-xs text-gray-500">Updated: 2024-01-15</span>
+            <div class="flex space-x-2">
+              <button class="text-green-700 border border-green-300 hover:bg-green-50 px-3 py-1 text-sm rounded">Download</button>
+              <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 text-sm rounded">Apply Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scheme 2 -->
+      <div class="border rounded-lg shadow hover:shadow-lg transition bg-white">
+        <div class="p-4 space-y-2">
+          <div class="flex justify-between items-start">
+            <h3 class="text-lg text-green-800 font-semibold">Pradhan Mantri Fasal Bima Yojana</h3>
+            <div class="flex space-x-2">
+              <span class="bg-green-100 text-green-800 px-2 py-1 text-xs rounded">active</span>
+              <span class="bg-purple-100 text-purple-800 px-2 py-1 text-xs rounded">insurance</span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600">Crop insurance scheme providing financial support to farmers</p>
+          <p class="text-sm"><strong>Amount:</strong> Up to ₹2,00,000</p>
+          <p class="text-sm"><strong>Deadline:</strong> 2024-04-15</p>
+          <p class="text-sm"><strong>Eligibility:</strong> All farmers growing notified crops</p>
+          <p class="text-sm"><strong>Documents:</strong> Land Records, Sowing Certificate, Bank Account</p>
+          <div class="flex justify-between items-center pt-4 border-t">
+            <span class="text-xs text-gray-500">Updated: 2024-01-20</span>
+            <div class="flex space-x-2">
+              <button class="text-green-700 border border-green-300 hover:bg-green-50 px-3 py-1 text-sm rounded">Download</button>
+              <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 text-sm rounded">Apply Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
