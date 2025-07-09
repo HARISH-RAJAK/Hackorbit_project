@@ -1,7 +1,12 @@
 This project is developed by Team Code Thrust in Hackorbit Hackathon. In domain Open Innovation to help farmers connect with each other.
 It allows them to rent nearby farming equipment, access market data, and stay updated with government schemes.
 
-# 🚜 FarmConnect - Equipment Rental Platform
+# 🚜 FarmConnect - Connect the farmers to make farming easier
+
+## 🖼️ Project UI & Backend Screenshots
+
+[📁 View Images on Google Drive](https://drive.google.com/drive/folders/1VoLYzZawipVK6UUVcOexXEH3w0e4JReq?usp=drive_link)
+
 
 **FarmConnect** is a web-based platform that allows farmers to list and rent agricultural equipment.
 The goal is to promote sustainable farming by enabling easy access to tools and machines needed for 
