@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farmer Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/lucide-static/font/lucide.css" />
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-green-50 to-amber-50">
+
+  <header class="bg-white shadow-sm border-b border-green-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+          <div class="bg-green-500 p-2 rounded-lg">
+            <i class="lucide lucide-sprout text-white"></i>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-green-800">FarmConnect</h1>
+            <p class="text-sm text-green-600">Your Profile</p>
+          </div>
+        </div>
+        <button class="border border-green-500 text-green-700 px-4 py-2 rounded hover:bg-green-100">
+          <a href="/home">Back to Dashboard</a>
+        </button>
+        <a href="/logout"
+          class="border border-red-500 text-red-600 px-4 py-2 rounded hover:bg-red-100 transition flex items-center">
+          <i class="lucide lucide-log-out mr-2"></i> Logout
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <form action="/editProfile" method="POST" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8" id="editForm">
+    <div class="space-y-6">
+
+      <section class="bg-white shadow rounded-xl p-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-4">
+            <div
+              class="h-20 w-20 rounded-full overflow-hidden bg-green-100 flex items-center justify-center text-white text-lg font-bold">
+              Farmer
+            </div>
+            <div>
+              <h2 class="text-2xl font-semibold text-green-800">
+                <%=user.username %>
+              </h2>
+              <p class="text-lg text-gray-600">Farmer & Agriculture Enthusiast</p>
+              <div class="flex items-center mt-2 text-sm text-green-600">
+                <i class="lucide lucide-calendar mr-1"></i>
+                Member since March 2020
+              </div>
+            </div>
+          </div>
+          <button id="editButton" type="button" data-editing="false" onclick="toggleEdit()"
+            class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded flex items-center transition">
+            <i class="lucide lucide-edit-3 mr-2"></i> Edit Profile
+          </button>
+        </div>
+      </section>
+
+      <section class="bg-white shadow rounded-xl p-6">
+        <h3 class="text-green-800 text-xl font-semibold mb-4 flex items-center">
+          <i class="lucide lucide-user mr-2"></i> Personal Information
+        </h3>
+        <div class="space-y-4">
+          <div class="editable-field">
+            <label class="text-sm font-medium text-gray-700">Name</label>
+            <span class="mt-1 text-gray-900 block">
+              <%=user.username %>
+            </span>
+            <input type="text" name="username" class="hidden mt-1 px-3 py-2 border rounded w-full" />
+          </div>
+
+          <div class="editable-field">
+            <label class="text-sm font-medium text-gray-700">Email</label>
+            <span class="mt-1 text-gray-900 block flex items-center"><i
+                class="lucide lucide-mail mr-2 text-green-600"></i>
+              <%=user.email %>
+            </span>
+            <input type="email" name="email" class="hidden mt-1 px-3 py-2 border rounded w-full" />
+          </div>
+
+          <div class="editable-field">
+            <label class="text-sm font-medium text-gray-700">Phone</label>
+            <span class="mt-1 text-gray-900 block flex items-center"><i
+                class="lucide lucide-phone mr-2 text-green-600"></i>
+              <%= user.bio.phone %>
+            </span>
+            <input type="text" name="phone" class="hidden mt-1 px-3 py-2 border rounded w-full" />
+          </div>
+
+          <div class="editable-field">
+            <label class="text-sm font-medium text-gray-700">Location</label>
+            <span class="mt-1 text-gray-900 block flex items-center"><i
+                class="lucide lucide-map-pin mr-2 text-green-600"></i>
+              <%= user.bio.location %>
+            </span>
+            <input type="text" name="location" class="hidden mt-1 px-3 py-2 border rounded w-full" />
+          </div>
+        </div>
+      </section>
+
+
+      <section class="bg-white shadow rounded-xl p-6">
+        <h3 class="text-green-800 text-xl font-semibold mb-4 flex items-center">
+          <i class="lucide lucide-tractor mr-2"></i> Farm Information
+        </h3>
+        <div class="space-y-4">
+          <div class="editable-field">
+            <label class="text-sm font-medium text-gray-700">Farm Size (in acres)</label>
+            <span class="mt-1 text-gray-900 block">
+              <%= user.bio.farmSize %>
+            </span>
+            <input type="text" name="farmSize" class="hidden mt-1 px-3 py-2 border rounded w-full" />
+          </div>
+
+          <div class="editable-field">
+            <label class="text-sm font-medium text-gray-700">Experience</label>
+            <span class="mt-1 text-gray-900 block">
+              <%= user.bio.experience %>
+            </span>
+            <input type="text" name="experience" class="hidden mt-1 px-3 py-2 border rounded w-full" />
+          </div>
+
+
+          <div>
+            <div class="editable-field">
+              <label class="text-sm font-medium text-gray-700">Specialization</label>
+
+              <!-- View Mode -->
+              <div id="specialization-view" class="mt-1 flex flex-wrap gap-2">
+                <% user.bio.specialization.forEach(spec=> { %>
+                  <span class="bg-green-100 text-green-800 px-2 py-1 text-xs rounded">
+                    <%= spec %>
+                  </span>
+                  <% }) %>
+              </div>
+
+              <!-- Edit Mode -->
+              <input type="text" name="specialization" id="specialization-edit"
+                class="hidden mt-2 px-3 py-2 border rounded w-full" placeholder="e.g. Wheat, Rice, Sugarcane" />
+            </div>
+          </div>
+      </section>
+
+
+      <section class="bg-white shadow rounded-xl p-6">
+        <h3 class="text-green-800 text-xl font-semibold mb-4">Activity Overview</h3>
+        <p class="text-sm text-green-600 mb-6">Your recent activity on FarmConnect</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="text-center p-4 bg-green-50 rounded-lg">
+            <div class="text-2xl font-bold text-green-800">23</div>
+            <div class="text-sm text-green-600">Workers Hired</div>
+          </div>
+          <div class="text-center p-4 bg-amber-50 rounded-lg">
+            <div class="text-2xl font-bold text-amber-800">12</div>
+            <div class="text-sm text-amber-600">Equipment Rented</div>
+          </div>
+          <div class="text-center p-4 bg-blue-50 rounded-lg">
+            <div class="text-2xl font-bold text-blue-800">8</div>
+            <div class="text-sm text-blue-600">Schemes Applied</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </form>
+
+  <script>
+    function toggleEdit() {
+      const editBtn = document.getElementById('editButton');
+      const isEditing = editBtn.dataset.editing === "true";
+
+      if (isEditing) {
+        document.getElementById("editForm").submit();
+        return;
+      }
+
+      editBtn.innerHTML = '<i class="lucide lucide-save mr-2"></i> Save';
+      editBtn.dataset.editing = "true";
+
+
+      document.querySelectorAll('.editable-field').forEach(field => {
+        const span = field.querySelector('span');
+        const input = field.querySelector('input');
+        input.value = span.innerText.trim();
+        span.classList.add('hidden');
+        input.classList.remove('hidden');
+      });
+
+      const specEdit = document.getElementById("specialization-edit");
+      const specView = document.getElementById("specialization-view");
+      if (specEdit && specView) {
+        specEdit.classList.remove("hidden");
+        specView.classList.add("hidden");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Equipment Rental</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-amber-50 to-green-50 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm border-b border-green-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+          <div class="bg-green-500 p-2 rounded-lg text-white text-xl">🌱</div>
+          <div>
+            <h1 class="text-2xl font-bold text-green-800">FarmConnect</h1>
+            <p class="text-sm text-green-600">Your Agricultural Hub</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-2">📍<span class="text-sm text-green-700">Maharashtra, India</span></div>
+          <button class="border px-2 py-1 rounded flex items-center space-x-1 hover:bg-gray-100">🌐<span>EN</span></button>
+          <button class="border px-2 py-1 rounded flex items-center space-x-1 hover:bg-gray-100">👤<span>Profile</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-green-100 sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex overflow-x-auto py-2 space-x-2">
+        <a href="/home" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📈 Dashboard</a>
+        <a href="/workers" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">👥 Find Workers</a>
+        <a href="/renting" class="bg-green-500 text-white px-4 py-2 rounded font-semibold underline underline-offset-2">🚜 Rent Equipment</a>
+        <a href="/schemes" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📄 Gov Schemes</a>
+        <a href="/cropinfo" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">🌿 Crop Guide</a>
+        <a href="/market" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📊 Market Data</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+    <!-- Heading -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <h2 class="text-3xl font-bold text-green-800">🚜 Equipment Rental</h2>
+        <p class="text-green-600">Rent farming equipment and tools from nearby providers</p>
+      </div>
+      <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded flex items-center shadow">
+        ➕ <span class="ml-2">List Your Equipment</span>
+      </button>
+    </div>
+
+    <!-- Search & Filter -->
+    <div class="flex flex-col md:flex-row gap-4">
+      <input type="text" class="pl-4 py-2 border rounded w-full md:flex-1" placeholder="🔍 Search equipment...">
+      <select class="border rounded py-2 px-3 w-full md:w-48">
+        <option>All Categories</option>
+        <option>Tractors</option>
+        <option>Harvesters</option>
+        <option>Tillers</option>
+        <option>Sprayers</option>
+        <option>Seeders</option>
+        <option>Pumps</option>
+      </select>
+      <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded shadow">🔧 Filter</button>
+    </div>
+
+    <!-- Equipment Cards -->
+    <div id="equipment-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </main>
+
+  <!-- Equipment Card Script -->
+  <script>
+    const equipment = [
+      {
+        id: 1,
+        name: "John Deere 5075E Tractor",
+        category: "Tractors",
+        description: "75 HP utility tractor perfect for medium-scale farming",
+        dailyRate: 800,
+        hourlyRate: 120,
+        owner: "Ramesh Agri Services",
+        rating: 4.8,
+        distance: "3.2 km",
+        available: true,
+        image: "https://images.unsplash.com/photo-1517022812141-23620dba5c23?w=300&h=200&fit=crop"
+      },
+      {
+        id: 2,
+        name: "Mahindra Harvester 575 DI",
+        category: "Harvesters",
+        description: "Efficient combine harvester for wheat and rice",
+        dailyRate: 1500,
+        hourlyRate: 250,
+        owner: "Singh Farm Equipment",
+        rating: 4.7,
+        distance: "5.8 km",
+        available: true,
+        image: "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=300&h=200&fit=crop"
+      }
+    ];
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById("equipment-list");
+
+      equipment.forEach(item => {
+        const card = document.createElement("div");
+        card.className = `border rounded-lg shadow hover:shadow-lg transition overflow-hidden ${!item.available ? 'opacity-75' : ''}`;
+        card.innerHTML = `
+          <div class="relative">
+            <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover" />
+            <span class="absolute top-3 right-3 px-2 py-1 text-xs text-white rounded ${item.available ? 'bg-green-500' : 'bg-red-500'}">
+              ${item.available ? 'Available' : 'Rented'}
+            </span>
+            <span class="absolute top-3 left-3 px-2 py-1 text-xs text-white bg-green-700 rounded">
+              ${item.category}
+            </span>
+          </div>
+          <div class="p-4 space-y-2">
+            <h3 class="text-lg text-green-800 font-semibold">${item.name}</h3>
+            <p class="text-sm text-gray-600">${item.description}</p>
+            <div class="flex justify-between text-sm text-gray-600">
+              <div class="flex items-center space-x-1">⭐<span>${item.rating}</span></div>
+              <div class="flex items-center space-x-1">📍<span>${item.distance}</span></div>
+            </div>
+            <div class="text-sm text-gray-600">Owner: ${item.owner}</div>
+            <div class="border-t pt-3">
+              <div class="flex justify-between mb-3">
+                <div class="text-center"><p class="text-xs text-gray-600">Hourly</p><p class="font-bold text-green-600">₹${item.hourlyRate}</p></div>
+                <div class="text-center"><p class="text-xs text-gray-600">Daily</p><p class="font-bold text-green-600">₹${item.dailyRate}</p></div>
+              </div>
+              ${item.available ? `
+                <div class="flex space-x-2">
+                  <button class="flex-1 border border-green-300 text-green-700 px-3 py-1 text-sm rounded hover:bg-green-50">Schedule</button>
+                  <button class="flex-1 bg-green-500 hover:bg-green-600 text-white px-3 py-1 text-sm rounded">Rent Now</button>
+                </div>
+              ` : `
+                <button class="w-full bg-gray-300 text-gray-600 px-3 py-1 text-sm rounded" disabled>Currently Unavailable</button>
+              `}
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>

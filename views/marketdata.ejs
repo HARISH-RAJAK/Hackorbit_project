@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Market Data - FarmConnect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-amber-50 to-green-50 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm border-b border-green-100">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <div class="bg-green-500 p-2 rounded-lg text-white text-xl">📊</div>
+        <div>
+          <h1 class="text-2xl font-bold text-green-800">FarmConnect</h1>
+          <p class="text-sm text-green-600">Your Agricultural Hub</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-2">📍<span class="text-sm text-green-700">Maharashtra, India</span></div>
+        <button class="border px-2 py-1 rounded hover:bg-gray-100">🌐 EN</button>
+        <button class="border px-2 py-1 rounded hover:bg-gray-100">👤 Profile</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-green-100 sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4 flex overflow-x-auto py-2 space-x-2">
+      <a href="/home" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📈 Dashboard</a>
+      <a href="/workers" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">👥 Find Workers</a>
+      <a href="/renting" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">🚜 Rent Equipment</a>
+      <a href="/schemes" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📜 Gov Schemes</a>
+      <a href="/cropinfo" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">🌿 Crop Guide</a>
+      <a href="/market" class="bg-green-500 text-white px-4 py-2 rounded font-semibold underline underline-offset-2">📊 Market Data</a>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="max-w-7xl mx-auto px-4 py-8 space-y-8">
+
+    <!-- Title -->
+    <section class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div>
+        <h2 class="text-3xl font-bold text-green-800">📊 Crop Market Data</h2>
+        <p class="text-green-600">Get real-time prices by crop, area, and district</p>
+      </div>
+      <input type="text" placeholder="🔍 Search by crop or district" class="px-4 py-2 border rounded w-full md:w-72 focus:outline-none focus:ring-2 focus:ring-green-300" />
+    </section>
+
+    <!-- Table -->
+    <div class="overflow-x-auto bg-white rounded shadow">
+      <table class="min-w-full text-sm text-left">
+        <thead class="bg-green-100 text-green-800">
+          <tr>
+            <th class="px-4 py-2">Crop</th>
+            <th class="px-4 py-2">Price (₹/Quintal)</th>
+            <th class="px-4 py-2">District</th>
+            <th class="px-4 py-2">Market Yard</th>
+            <th class="px-4 py-2">Updated</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-green-100">
+          <tr class="hover:bg-green-50">
+            <td class="px-4 py-2">Wheat</td>
+            <td class="px-4 py-2 text-amber-700 font-semibold">₹2,100</td>
+            <td class="px-4 py-2">Nashik</td>
+            <td class="px-4 py-2">Nashik APMC</td>
+            <td class="px-4 py-2 text-gray-500 text-xs">2025-07-09</td>
+          </tr>
+          <tr class="hover:bg-green-50">
+            <td class="px-4 py-2">Onion</td>
+            <td class="px-4 py-2 text-amber-700 font-semibold">₹950</td>
+            <td class="px-4 py-2">Pune</td>
+            <td class="px-4 py-2">Pimpri Yard</td>
+            <td class="px-4 py-2 text-gray-500 text-xs">2025-07-09</td>
+          </tr>
+          <tr class="hover:bg-green-50">
+            <td class="px-4 py-2">Soybean</td>
+            <td class="px-4 py-2 text-amber-700 font-semibold">₹3,800</td>
+            <td class="px-4 py-2">Latur</td>
+            <td class="px-4 py-2">Latur Mandi</td>
+            <td class="px-4 py-2 text-gray-500 text-xs">2025-07-09</td>
+          </tr>
+          <tr class="hover:bg-green-50">
+            <td class="px-4 py-2">Sugarcane</td>
+            <td class="px-4 py-2 text-amber-700 font-semibold">₹3,100</td>
+            <td class="px-4 py-2">Kolhapur</td>
+            <td class="px-4 py-2">Kolhapur Sugar Mill</td>
+            <td class="px-4 py-2 text-gray-500 text-xs">2025-07-09</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
+</html>

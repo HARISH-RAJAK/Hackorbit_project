@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find Farm Workers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-green-50 to-amber-50 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm border-b border-green-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+          <div class="bg-green-500 p-2 rounded-lg">🌱</div>
+          <div>
+            <h1 class="text-2xl font-bold text-green-800">FarmConnect</h1>
+            <p class="text-sm text-green-600">Your Agricultural Hub</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-2">📍<span class="text-sm text-green-700">Maharashtra, India</span></div>
+          <button class="border px-2 py-1 rounded flex items-center space-x-1">🌐<span>EN</span></button>
+          <button class="border px-2 py-1 rounded flex items-center space-x-1">👤<span>Profile</span></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-green-100 sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex overflow-x-auto py-2 space-x-2">
+        <a href="/home" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📈 Dashboard</a>
+        <a href="/workers" class="bg-green-500 text-white px-4 py-2 rounded font-semibold underline underline-offset-2">👥 Find Workers</a>
+        <a href="/renting" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">🚜 Rent Equipment</a>
+        <a href="/schemes" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📄 Gov Schemes</a>
+        <a href="/cropinfo" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">🌿 Crop Guide</a>
+        <a href="/market" class="text-green-700 hover:bg-green-50 px-4 py-2 rounded">📊 Market Data</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+    <!-- Title -->
+    <div>
+      <h2 class="text-3xl font-bold text-green-800">👥 Find Farm Workers</h2>
+      <p class="text-green-600">Connect with skilled agricultural workers in your area</p>
+    </div>
+
+    <!-- Filter Controls -->
+    <div class="flex flex-col md:flex-row gap-4">
+      <input type="text" class="pl-4 py-2 border rounded w-full md:flex-1" placeholder="🔍 Search by name or skill...">
+      <select class="border rounded py-2 px-3 w-full md:w-48">
+        <option>Select skill</option>
+        <option>Planting</option>
+        <option>Harvesting</option>
+        <option>Irrigation</option>
+        <option>Pest Control</option>
+        <option>Fertilization</option>
+        <option>Land Preparation</option>
+        <option>Tractor Operation</option>
+        <option>Plowing</option>
+        <option>Seeding</option>
+        <option>Organic Farming</option>
+        <option>Composting</option>
+        <option>Greenhouse Management</option>
+      </select>
+      <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Filter</button>
+    </div>
+
+    <!-- Workers Grid -->
+    <div id="worker-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </main>
+
+  <!-- Script -->
+  <script>
+    const workers = [
+      {
+        id: 1,
+        name: "Rajesh Kumar",
+        skills: ["Planting", "Harvesting", "Irrigation"],
+        experience: "8 years",
+        rating: 4.8,
+        distance: "2.5 km",
+        hourlyRate: 150,
+        phone: "+91 98765 43210",
+        available: true,
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+      },
+      {
+        id: 2,
+        name: "Priya Sharma",
+        skills: ["Pest Control", "Fertilization", "Land Preparation"],
+        experience: "5 years",
+        rating: 4.9,
+        distance: "4.2 km",
+        hourlyRate: 180,
+        phone: "+91 87654 32109",
+        available: true,
+        image: "https://images.unsplash.com/photo-1494790108755-2616b86db8e8?w=150&h=150&fit=crop&crop=face"
+      },
+      {
+        id: 3,
+        name: "Suresh Patel",
+        skills: ["Tractor Operation", "Plowing", "Seeding"],
+        experience: "12 years",
+        rating: 4.7,
+        distance: "6.8 km",
+        hourlyRate: 200,
+        phone: "+91 76543 21098",
+        available: false,
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+      },
+      {
+        id: 4,
+        name: "Anita Devi",
+        skills: ["Organic Farming", "Composting", "Greenhouse Management"],
+        experience: "6 years",
+        rating: 4.6,
+        distance: "3.1 km",
+        hourlyRate: 160,
+        phone: "+91 65432 10987",
+        available: true,
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+      }
+    ];
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById("worker-list");
+
+      workers.forEach(worker => {
+        const card = document.createElement("div");
+        card.className = `border rounded-lg p-4 shadow hover:shadow-lg transition-shadow bg-white ${!worker.available ? "opacity-75" : ""}`;
+        card.innerHTML = `
+          <div class="flex items-center space-x-4">
+            <img src="${worker.image}" alt="${worker.name}" class="w-16 h-16 rounded-full object-cover" />
+            <div>
+              <h3 class="text-lg text-green-800 font-semibold">${worker.name}</h3>
+              <div class="flex items-center space-x-1">
+                ⭐<span class="text-sm font-medium">${worker.rating}</span>
+                <span class="text-sm text-gray-500">(${worker.experience})</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4">
+            <p class="text-sm text-gray-600 mb-1">Skills:</p>
+            <div class="flex flex-wrap gap-1">
+              ${worker.skills.map(skill => `<span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">${skill}</span>`).join('')}
+            </div>
+          </div>
+          <div class="flex justify-between text-sm mt-4 text-gray-600">
+            <div class="flex items-center space-x-1">📍<span>${worker.distance}</span></div>
+            <div class="text-green-600 font-medium">₹${worker.hourlyRate}/hour</div>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div class="flex items-center space-x-2">
+              <div class="w-2 h-2 rounded-full ${worker.available ? "bg-green-500" : "bg-red-500"}"></div>
+              <span class="text-sm text-gray-600">${worker.available ? "Available" : "Busy"}</span>
+            </div>
+            ${worker.available ? `
+              <div class="flex space-x-2">
+                <button class="border border-green-300 text-green-600 px-3 py-1 text-sm rounded hover:bg-green-50">Call</button>
+                <button class="bg-green-500 text-white px-3 py-1 text-sm rounded hover:bg-green-600">Hire</button>
+              </div>` : ""}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>
